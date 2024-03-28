@@ -25,6 +25,7 @@ public class SecurityConfig {
                         // Ant 스타일의 패턴 예를 들어, "/login", "/logout", "/user/**" 등의 URL 패턴
                         .requestMatchers(new AntPathRequestMatcher("/h2-console/**"));
 
+
             }
         };
     }
