@@ -35,7 +35,7 @@ public class SecurityConfig {
         return http
                 // authorize객체를 변수로 받아서 url에 따른 인가를 설정해주고 반환한다.
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/login").permitAll()
+                        .requestMatchers("/mvLogin").permitAll()
                         .requestMatchers("/admin").hasRole("ADMIN")
                         // 나머지 url은 인증된 사용자에게만 허용
                         .anyRequest().authenticated()
@@ -48,9 +48,6 @@ public class SecurityConfig {
                         // 로그인 성공시 리다이렉트 url
                         .defaultSuccessUrl("/")
                 )
-
-
-
                 .csrf(AbstractHttpConfigurer::disable)
                 .build();
     }

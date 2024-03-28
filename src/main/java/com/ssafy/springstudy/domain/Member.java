@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ import static lombok.AccessLevel.*;
 // JPA는 기본생성자를 필요로 함.
 // 이유는 프록시 개념이 들어가는데 이 개념은 딥한 개념 (따로 찾아보면 좋을 듯)
 // 무조건 public, protected 만 가능한데 public 보다 낮은 protected 로 보통 설정함. (관례)
+@Getter
 @NoArgsConstructor(access = PROTECTED)
 public class Member {
     // 이 값을 PK로 생성해라
@@ -42,6 +44,10 @@ public class Member {
     private String nickName;
     @NotBlank
     private String password;
+
+    @NotBlank
+    private String role;
+
     // member
     @OneToMany(mappedBy = "member")
     private List<Post> posts = new ArrayList<>();

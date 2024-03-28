@@ -22,8 +22,7 @@ public class CustomUserDetails implements UserDetails {
         collection.add(new GrantedAuthority() {
             @Override
             public String getAuthority() {
-                // return member.getRole();
-                return null;
+                return member.getRole();
             }
         });
 
@@ -32,14 +31,12 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        // return member.getPassword();
-        return null;
+        return member.getPassword();
     }
 
     @Override
     public String getUsername() {
-        // return member.getEmail();
-        return null;
+        return member.getEmail();
     }
 
     @Override

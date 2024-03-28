@@ -10,4 +10,6 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/mvLogin")
+    public String mvLgin() {return "members/addMemberForm";}
 }
